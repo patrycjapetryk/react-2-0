@@ -7,7 +7,7 @@ type Props = {
 
 export function Text({ children, className, ...spread }: Props) {
   return (
-    <p className={(cn("my-6 dark:text-white"), className)} {...spread}>
+    <p className={cn("my-6 dark:text-white", className)} {...spread}>
       {children}
     </p>
   );
