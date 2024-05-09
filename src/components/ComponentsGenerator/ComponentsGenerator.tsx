@@ -25,8 +25,12 @@ export function ComponentsGenerator() {
 
           <select name="components" id="components" ref={componentFieldRef}>
             <option value="">--Choose option--</option>
-            {ComponentGeneratorData.map(({ componentName }) => {
-              return <option value={componentName}>{componentName}</option>;
+            {ComponentGeneratorData.map(({ componentName }, index) => {
+              return (
+                <option key={`option-${index}`} value={componentName}>
+                  {componentName}
+                </option>
+              );
             })}
           </select>
         </div>
