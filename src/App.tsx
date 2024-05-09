@@ -1,18 +1,9 @@
-import { type MouseEventHandler } from "react";
-import { Button, Text } from "./ui";
+import { FormWizard } from "./components/FormWizard";
 
 function App() {
-  const handleClick: MouseEventHandler<HTMLButtonElement> = () => {
-    alert("Clicked!!!");
-  };
-
   return (
     <main className="flex min-h-screen w-full flex-col items-center justify-center gap-6">
-      <Text className="underline">Hey!!!</Text>
-
-      <Button label="Click me" onClick={handleClick} />
-      <Button label="Click me" greenColor onClick={handleClick} />
-      <Button label="Click me" redColor onClick={handleClick} />
+      <FormWizard />
     </main>
   );
 }
