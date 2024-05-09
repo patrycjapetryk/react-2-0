@@ -1,7 +1,7 @@
 function App() {
   return (
     <>
-      <div className='flex justify-center items-center w-full min-h-screen'>
+      <div className="flex min-h-screen w-full items-center justify-center">
         <p>Hello!!!</p>
       </div>
     </>
