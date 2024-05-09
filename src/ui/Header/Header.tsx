@@ -3,12 +3,12 @@ import { cn } from "../../utils/cn";
 
 type Props = {
   children: string | string[] | number;
-} & ComponentProps<"p">;
+} & ComponentProps<"h2">;
 
-export function Text({ children, className, ...spread }: Props) {
+export function Header({ children, className, ...spread }: Props) {
   return (
-    <p className={cn("my-6", className)} {...spread}>
+    <h2 className={cn("text-xl uppercase", className)} {...spread}>
       {children}
-    </p>
+    </h2>
   );
 }

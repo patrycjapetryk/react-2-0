@@ -1,18 +1,10 @@
-import { Button, Text } from "./ui";
+import { ComponentsGenerator } from "./components/ComponentsGenerator";
 
 function App() {
-  const handleClick = () => {
-    alert("Clicked!!!");
-  };
-
   return (
     <>
-      <main className="flex min-h-screen w-full flex-col items-center justify-center gap-6">
-        <Text className="underline">Hey!!!</Text>
-
-        <Button label="Click me" onClick={handleClick} />
-        <Button label="Click me" greenColor onClick={handleClick} />
-        <Button label="Click me" redColor onClick={handleClick} />
+      <main className="flex min-h-screen w-full flex-col items-center gap-6 pt-20">
+        <ComponentsGenerator />
       </main>
     </>
   );
