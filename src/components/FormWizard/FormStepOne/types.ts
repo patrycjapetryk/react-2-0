@@ -11,4 +11,4 @@ export const validationSchema = z.object({
     .max(20, "Max 20 characters"),
 });
 
-export type RegistrationFormData = z.infer<typeof validationSchema>;
+export type FormData = z.infer<typeof validationSchema>;
