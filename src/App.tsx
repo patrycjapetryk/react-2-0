@@ -1,9 +1,9 @@
-import { FormWizard } from "./components/FormWizard";
+import { Form } from "./components/Form";
 
 function App() {
   return (
     <main className="flex min-h-screen w-full flex-col items-center justify-center gap-6">
-      <FormWizard />
+      <Form />
     </main>
   );
 }
