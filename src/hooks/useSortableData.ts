@@ -10,12 +10,14 @@ export enum SortingType {
 }
 
 export function useSortableData({ data }: { data: UsersData }) {
-  const [sortingField, setSortingField] = useState(SortingType.NOT_SET);
+  const [sortingField, setSortingField] = useState<SortingType | string>(
+    SortingType.NOT_SET,
+  );
 
   const sortedData = (data: UsersData) => {
     if (sortingField === SortingType.NICKNAME_ASC) {
       return data.sort((a, b) => {
-        const nameA = a.nickname.toUpperCase(); // ignore upper and lowercase
+        const nameA = a.nickname.toUpperCase();
         const nameB = b.nickname.toUpperCase();
         if (nameA < nameB) {
           return -1;
@@ -27,7 +29,7 @@ export function useSortableData({ data }: { data: UsersData }) {
       });
     } else if (sortingField === SortingType.NICKNAME_DES) {
       return data.sort((a, b) => {
-        const nameA = a.nickname.toUpperCase(); // ignore upper and lowercase
+        const nameA = a.nickname.toUpperCase();
         const nameB = b.nickname.toUpperCase();
         if (nameA < nameB) {
           return 1;
@@ -46,7 +48,7 @@ export function useSortableData({ data }: { data: UsersData }) {
     }
   };
 
-  const setSorting = (field: SortingType) => {
+  const setSorting = (field: SortingType | string) => {
     setSortingField(field);
   };
 

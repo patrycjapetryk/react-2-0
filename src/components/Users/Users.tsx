@@ -16,7 +16,7 @@ export function Users({ usersData }: Props) {
   const { sortedData, setSorting } = useSortableData({ data });
 
   const handleChange: ChangeEventHandler<HTMLSelectElement> = (event) => {
-    const selectValue = event.target.value as SortingType;
+    const selectValue = event.target.value;
     setSorting(selectValue);
   };
 
