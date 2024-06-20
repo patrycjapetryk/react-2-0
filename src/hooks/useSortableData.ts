@@ -19,24 +19,16 @@ export function useSortableData({ data }: { data: UsersData }) {
       return data.sort((a, b) => {
         const nameA = a.nickname.toUpperCase();
         const nameB = b.nickname.toUpperCase();
-        if (nameA < nameB) {
-          return -1;
-        }
-        if (nameA > nameB) {
-          return 1;
-        }
+        if (nameA < nameB) return -1;
+        if (nameA > nameB) return 1;
         return 0;
       });
     } else if (sortingField === SortingType.NICKNAME_DES) {
       return data.sort((a, b) => {
         const nameA = a.nickname.toUpperCase();
         const nameB = b.nickname.toUpperCase();
-        if (nameA < nameB) {
-          return 1;
-        }
-        if (nameA > nameB) {
-          return -1;
-        }
+        if (nameA < nameB) return 1;
+        if (nameA > nameB) return -1;
         return 0;
       });
     } else if (sortingField === SortingType.AGE_ASC) {
