@@ -21,7 +21,7 @@ export function Users({ usersData }: Props) {
   };
 
   return (
-    <section className="max-w-xl rounded-lg border border-zinc-300 p-10">
+    <section className="max-w-xl rounded-xl border bg-white p-10">
       <select className="flex gap-6" onChange={handleChange}>
         <option value="">Sort by</option>
         <option value={SortingType.NICKNAME_ASC}>Nickname ascending</option>

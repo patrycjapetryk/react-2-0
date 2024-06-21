@@ -1,11 +1,19 @@
+import { Logo } from "./components/Logo/Logo";
+import { ThemeContextProvider } from "./components/Theme/ThemeContext";
+import { ThemeSwitcher } from "./components/Theme/ThemeSwitcher";
 import { Users } from "./components/Users";
 import { usersData } from "./components/Users/usersData";
+import { Main } from "./ui";
 
 function App() {
   return (
-    <main className="flex min-h-screen w-full items-center justify-center">
-      <Users usersData={usersData} />
-    </main>
+    <ThemeContextProvider>
+      <Main>
+        <Logo />
+        <ThemeSwitcher />
+        <Users usersData={usersData} />
+      </Main>
+    </ThemeContextProvider>
   );
 }
 
