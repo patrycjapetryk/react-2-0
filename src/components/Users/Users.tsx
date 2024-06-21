@@ -2,7 +2,10 @@ import { type ChangeEventHandler } from "react";
 
 import { capitalizeText } from "../../utils/capitalizeText";
 import { type UsersData } from "./usersData";
-import { SortingType, useSortableData } from "../../hooks/useSortableData";
+import { useSortableData } from "../../hooks/useSortableData";
+import { AddUser } from "../AddUser";
+import { UsersList } from "./UsersList";
+import { UsersFilters } from "./UsersFilters";
 
 type Props = {
   usersData: UsersData;
@@ -22,27 +25,9 @@ export function Users({ usersData }: Props) {
 
   return (
     <section className="max-w-xl rounded-xl border bg-white p-10">
-      <select className="flex gap-6" onChange={handleChange}>
-        <option value="">Sort by</option>
-        <option value={SortingType.NICKNAME_ASC}>Nickname ascending</option>
-        <option value={SortingType.NICKNAME_DES}>Nickname descending</option>
-        <option value={SortingType.AGE_ASC}>Age ascending</option>
-        <option value={SortingType.AGE_DES}>Age descending</option>
-      </select>
-
-      <div className="mt-10 flex flex-wrap gap-3">
-        {sortedData.map(({ id, nickname, age }) => {
-          return (
-            <div
-              className="flex gap-3 rounded-md bg-slate-200 px-4 py-1"
-              key={id}
-            >
-              <p>{nickname}</p>
-              <p>{age}</p>
-            </div>
-          );
-        })}
-      </div>
+      <UsersFilters handleChange={handleChange} />
+      <UsersList data={sortedData} />
+      <AddUser />
     </section>
   );
 }
